@@ -1,0 +1,63 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+}
+
+body {
+  height: 100vh;
+  background: url(/API-Weathers/imgs/chuvoso.jpg) center / cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 400px;
+  height: 400px;
+  background-color: brown;
+  border-radius: 20px;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+}
+
+form input {
+  width: 75%;
+  height: 50px;
+  font-size: 14px;
+  padding: 7px 10px;
+  outline: none;
+  border-radius: 10px;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid black;
+  position: relative;
+  z-index: 500;
+  color: antiquewhite;
+
+  width: calc(50% - 15px);
+  position: relative;
+}
+
+form input .label_area {
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  transform: translateY(-50%);
+  background-color: transparent;
+  padding: 0 15px;
+  transition: top 0.5s ease, left 0.5s ease;
+}
+
+form input:focus ~ .label_area,
+form input:valid ~ .label_area {
+  z-index: 600;
+  top: 0;
+  left: 7%;
+  color: black;
+}
