@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="stylesheet" href="/APIII/styles/styles.css" />
+
+    <script src="/APIII/scripts/scripts.js" defer></script>
+  </head>
+  <body>
+    <section class="container">
+      <form action="#" id="search">
+        <i class="fa-solid fa-location-dot"></i>
+        <input type="text" name="city" id="city" placeholder="cidade" />
+        <button>
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </form>
+      <div class="weather">
+        <h1 class="title">Name City</h1>
+        <div class="infos">
+          <div class="temp">
+            <img
+              src="/APIII/imgs/borasol.jpg"
+              alt="Imagem vindo da API referente ao tempo"
+            />
+            <div>
+              <p class="temp_value">32 <sup>C°</sup></p>
+              <p class="temp_description">Ensolarado</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="other_infos">
+          <div class="info">
+            <i class="temp_max_icon fa-solid fa-temperature-high"></i>
+            <div>
+              <h2>Temp. Max</h2>
+              <p class="temp_max">32 <sup>C°</sup></p>
+            </div>
+          </div>
+          <div class="info">
+            <i class="temp_min_icon fa-solid fa-temperature-low"> </i>
+            <div>
+              <h2>Temp. Min</h2>
+              <p class="temp_min">10 <sup>C°</sup></p>
+            </div>
+          </div>
+          <div class="info">
+            <i class="humidity_icon fa-solid fa-droplet"> </i>
+            <div>
+              <h2>Umidade</h2>
+              <p class="humidity">50%</p>
+            </div>
+          </div>
+          <div class="info">
+            <i class="wind_icon fa-solid fa-wind"> </i>
+            <div>
+              <h2>Vento</h2>
+              <p class="wind">20 km</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
