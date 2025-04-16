@@ -20,22 +20,39 @@ const tempmin = document.getElementById("tempmin");
 const tempmax = document.getElementById("tempmax");
 const humidity = document.getElementById("humidity");
 const wind = document.getElementById("wind");
+const weather = document.getElementById("weather");
 
 const processar = async (event) => {
+  event.preventDefault();
   const cityName = cityInput.value;
   const key = "8847eaccfbf5bcb727539acca64abb9f";
 
-  const response = await fetch(
-    `https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(
-      cityName
-    )}&appid=${key}&units=metric&lang=pt_br`
-  );
+  try {
+    const response = await fetch(
+      `https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(
+        cityName
+      )}&appid=${key}&units=metric&lang=pt_br`
+    );
 
-  const data = await response.json();
+    const data = await response.json();
 
-  console.log(data);
+    console.log(data.main.temp);
+
+    img.src = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+    h1.textContent = data.name;
+    temp1.textContent = `${data.main.temp} C°`;
+    temp2.textContent = data.weather[0].description;
+    tempmax.textContent = `${data.main.temp_max} C°`;
+    tempmin.textContent = `${data.main.temp_min} C°`;
+    humidity.textContent = `${data.main.humidity}%`;
+    wind.textContent = `${data.wind.speed} Km/h`;
+
+    weather.classList.add("visible");
+
+    console.log(data);
+  } catch (error) {
+    console.log("Erro ao buscar dados", error);
+  }
 };
-
-console.log(h1, img, temp1, temp2, tempmin, tempmax, humidity, wind);
 
 search.addEventListener("submit", processar);
