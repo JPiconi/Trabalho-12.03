@@ -12,7 +12,7 @@
 
 const search = document.getElementById("search");
 const cityInput = document.getElementById("city");
-const h1 = document.getElementById("id");
+const h1 = document.getElementById("h1");
 const img = document.getElementById("img");
 const temp1 = document.getElementById("temp_value1");
 const temp2 = document.getElementById("temp_value2");
@@ -35,5 +35,7 @@ const processar = async (event) => {
 
   console.log(data);
 };
+
+console.log(h1, img, temp1, temp2, tempmin, tempmax, humidity, wind);
 
 search.addEventListener("submit", processar);
